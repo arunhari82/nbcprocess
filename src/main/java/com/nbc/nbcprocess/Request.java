@@ -8,14 +8,19 @@ public class Request implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Global Clearance Number")
+	@org.kie.api.definition.type.Label("Global Clearance Number")
 	private java.lang.String globalClearenceNumber;
-	@org.kie.api.definition.type.Label(value = "EShare Number")
+	@org.kie.api.definition.type.Label("EShare Number")
 	private java.lang.String eShareNumber;
-	@org.kie.api.definition.type.Label(value = "Agreement Type")
+	@org.kie.api.definition.type.Label("Agreement Type")
 	private java.lang.String agreement_type;
-	@org.kie.api.definition.type.Label(value = "Budget Requested")
+	@org.kie.api.definition.type.Label("Budget Requested")
 	private double budget_requested;
+
+	@org.kie.api.definition.type.Label(value = "Data Set Requestor")
+	private java.lang.String datasetRequestor;
+
+	private java.util.List<java.lang.String> requestedDatasets;
 
 	public Request() {
 	}
@@ -52,13 +57,33 @@ public class Request implements java.io.Serializable {
 		this.budget_requested = budget_requested;
 	}
 
+	public java.lang.String getDatasetRequestor() {
+		return this.datasetRequestor;
+	}
+
+	public void setDatasetRequestor(java.lang.String datasetRequestor) {
+		this.datasetRequestor = datasetRequestor;
+	}
+
+	public java.util.List<java.lang.String> getRequestedDatasets() {
+		return this.requestedDatasets;
+	}
+
+	public void setRequestedDatasets(
+			java.util.List<java.lang.String> requestedDatasets) {
+		this.requestedDatasets = requestedDatasets;
+	}
+
 	public Request(java.lang.String globalClearenceNumber,
 			java.lang.String eShareNumber, java.lang.String agreement_type,
-			double budget_requested) {
+			double budget_requested, java.lang.String datasetRequestor,
+			java.util.List<java.lang.String> requestedDatasets) {
 		this.globalClearenceNumber = globalClearenceNumber;
 		this.eShareNumber = eShareNumber;
 		this.agreement_type = agreement_type;
 		this.budget_requested = budget_requested;
+		this.datasetRequestor = datasetRequestor;
+		this.requestedDatasets = requestedDatasets;
 	}
 
 }
