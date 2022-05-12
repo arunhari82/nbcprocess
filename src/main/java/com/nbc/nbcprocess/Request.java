@@ -20,6 +20,7 @@ public class Request implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Data Set Requestor")
 	private java.lang.String datasetRequestor;
 
+	@org.kie.api.definition.type.Label("Requested Data Sets")
 	private java.util.List<java.lang.String> requestedDatasets;
 
 	public Request() {
