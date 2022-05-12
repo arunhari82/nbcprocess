@@ -6,12 +6,59 @@ package com.nbc.nbcprocess;
 
 public class Request implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Request() {
-    }
+	@org.kie.api.definition.type.Label(value = "Global Clearance Number")
+	private java.lang.String globalClearenceNumber;
+	@org.kie.api.definition.type.Label(value = "EShare Number")
+	private java.lang.String eShareNumber;
+	@org.kie.api.definition.type.Label(value = "Agreement Type")
+	private java.lang.String agreement_type;
+	@org.kie.api.definition.type.Label(value = "Budget Requested")
+	private double budget_requested;
 
+	public Request() {
+	}
 
+	public java.lang.String getGlobalClearenceNumber() {
+		return this.globalClearenceNumber;
+	}
 
+	public void setGlobalClearenceNumber(java.lang.String globalClearenceNumber) {
+		this.globalClearenceNumber = globalClearenceNumber;
+	}
+
+	public java.lang.String geteShareNumber() {
+		return this.eShareNumber;
+	}
+
+	public void seteShareNumber(java.lang.String eShareNumber) {
+		this.eShareNumber = eShareNumber;
+	}
+
+	public java.lang.String getAgreement_type() {
+		return this.agreement_type;
+	}
+
+	public void setAgreement_type(java.lang.String agreement_type) {
+		this.agreement_type = agreement_type;
+	}
+
+	public double getBudget_requested() {
+		return this.budget_requested;
+	}
+
+	public void setBudget_requested(double budget_requested) {
+		this.budget_requested = budget_requested;
+	}
+
+	public Request(java.lang.String globalClearenceNumber,
+			java.lang.String eShareNumber, java.lang.String agreement_type,
+			double budget_requested) {
+		this.globalClearenceNumber = globalClearenceNumber;
+		this.eShareNumber = eShareNumber;
+		this.agreement_type = agreement_type;
+		this.budget_requested = budget_requested;
+	}
 
 }
