@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:drools="http://www.jboss.org/drools" id="_djylUdItEeykDemlnq_YRQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
-  <bpmn2:process id="nbcprocess.ReviewProcess" drools:packageName="com.nbc.nbcprocess" drools:version="1.0" drools:adHoc="false" name="ReviewProcess" isExecutable="true" processType="Public"/>
-  <bpmndi:BPMNDiagram id="_djzzcNItEeykDemlnq_YRQ">
-    <bpmndi:BPMNPlane id="_djzzcdItEeykDemlnq_YRQ" bpmnElement="nbcprocess.ReviewProcess"/>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:drools="http://www.jboss.org/drools" id="_kFZ4MNItEeykDemlnq_YRQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+  <bpmn2:itemDefinition id="_requestItem" structureRef="com.nbc.nbcprocess.Request"/>
+  <bpmn2:itemDefinition id="_approvedItem" structureRef="Boolean"/>
+  <bpmn2:process id="nbcprocess.ReviewProcess" drools:packageName="com.nbc.nbcprocess" drools:version="1.0" drools:adHoc="false" name="ReviewProcess" isExecutable="true" processType="Public">
+    <bpmn2:extensionElements>
+      <drools:import name="com.nbc.nbcprocess.Request"/>
+    </bpmn2:extensionElements>
+    <bpmn2:property id="request" itemSubjectRef="_requestItem" name="request"/>
+    <bpmn2:property id="approved" itemSubjectRef="_approvedItem" name="approved"/>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="_kFZ4MdItEeykDemlnq_YRQ">
+    <bpmndi:BPMNPlane id="_kFZ4MtItEeykDemlnq_YRQ" bpmnElement="nbcprocess.ReviewProcess"/>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_djzzctItEeykDemlnq_YRQ" type="BPSimData">
+  <bpmn2:relationship id="_kFZ4M9ItEeykDemlnq_YRQ" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
@@ -12,7 +20,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_djylUdItEeykDemlnq_YRQ</bpmn2:source>
-    <bpmn2:target>_djylUdItEeykDemlnq_YRQ</bpmn2:target>
+    <bpmn2:source>_kFZ4MNItEeykDemlnq_YRQ</bpmn2:source>
+    <bpmn2:target>_kFZ4MNItEeykDemlnq_YRQ</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
