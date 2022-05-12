@@ -15,9 +15,9 @@ public class Request implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Agreement Type")
 	private java.lang.String agreement_type;
 	@org.kie.api.definition.type.Label("Budget Requested")
-	private double budget_requested;
+	private Float budget_requested;
 
-	@org.kie.api.definition.type.Label(value = "Data Set Requestor")
+	@org.kie.api.definition.type.Label("Data Set Requestor")
 	private java.lang.String datasetRequestor;
 
 	private java.util.List<java.lang.String> requestedDatasets;
@@ -49,14 +49,6 @@ public class Request implements java.io.Serializable {
 		this.agreement_type = agreement_type;
 	}
 
-	public double getBudget_requested() {
-		return this.budget_requested;
-	}
-
-	public void setBudget_requested(double budget_requested) {
-		this.budget_requested = budget_requested;
-	}
-
 	public java.lang.String getDatasetRequestor() {
 		return this.datasetRequestor;
 	}
@@ -74,9 +66,18 @@ public class Request implements java.io.Serializable {
 		this.requestedDatasets = requestedDatasets;
 	}
 
+	public java.lang.Float getBudget_requested() {
+		return this.budget_requested;
+	}
+
+	public void setBudget_requested(java.lang.Float budget_requested) {
+		this.budget_requested = budget_requested;
+	}
+
 	public Request(java.lang.String globalClearenceNumber,
 			java.lang.String eShareNumber, java.lang.String agreement_type,
-			double budget_requested, java.lang.String datasetRequestor,
+			java.lang.Float budget_requested,
+			java.lang.String datasetRequestor,
 			java.util.List<java.lang.String> requestedDatasets) {
 		this.globalClearenceNumber = globalClearenceNumber;
 		this.eShareNumber = eShareNumber;
